@@ -9,49 +9,53 @@ int exec(int op, int a, int b) {
        b=c;
    }
      switch(op){
-      case '0': result = -a;
+      case 0: result = -a;
          break;
-      case '1': result = a+b;
+      case 1: result = a+b;
          break;
-      case '2': result = a-b;
+      case 2: result = a-b;
          break;
-      case '3': result = a*b;
+      case 3: result = a*b;
          break;
-      case '4': result = a/b;
+      case 4: result = a/b;
          break;
-      case '5': result = abs(a);
+      case 5: result = abs(a);
          break;
-      case '6': result = power(a, b);
+      case 6: result = power(a, b);
          break;
-      case "7, 13, 77": result = a%b;
+      case 7: result = a%b;
          break;
-      case '8': result = max(a,b);
+      case 13: result = a%b;
          break;
-      case '9': result = min(a,b);
+      case 77: result = a%b;
          break;
-      case '10':
+      case 8: result = max(a,b);
+         break;
+      case 9: result = min(a,b);
+         break;
+      case 10:
          switch(abs(b)%8){
-             case '0' :result = abs(a)*sizeof(char);
+             case 0 :result = abs(a)*sizeof(char);
              break;
-             case '1':result = abs(a)*sizeof(signed char);
+             case 1:result = abs(a)*sizeof(signed char);
              break;
-             case '2':result = abs(a)*sizeof(short);
+             case 2:result = abs(a)*sizeof(short);
              break;
-             case '3' :result = abs(a)*sizeof(unsigned int);
+             case 3 :result = abs(a)*sizeof(unsigned int);
              break;
-             case '4' :result = abs(a)*sizeof(long);
+             case 4 :result = abs(a)*sizeof(long);
              break;
-             case '5' :result = abs(a)*sizeof(unsigned long long);
+             case 5 :result = abs(a)*sizeof(unsigned long long);
              break;
-             case '6' :result = abs(a)*sizeof(float);
+             case 6 :result = abs(a)*sizeof(float);
              break;
-             case '7' :result = abs(a)*sizeof(double);
+             case 7 :result = abs(a)*sizeof(double);
              break;
-         }   
+         }
              break;
-      case '11':
+      case 11:
          if(a==0){
-             retern0;
+             retern NAN;
          }
          else {
              result = 6*cos(b*PI)/a;
