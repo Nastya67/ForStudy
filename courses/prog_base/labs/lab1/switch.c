@@ -47,8 +47,8 @@ int exec(int op, int a, int b) {
              break;
              case '7' :result = abs(a)*sizeof(double);
              break;
+         }   
              break;
-         }
       case '11':
          if(a==0){
              retern0;
