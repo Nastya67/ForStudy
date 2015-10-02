@@ -2,6 +2,7 @@
 
 int exec(int op, int a, int b) {
    int result;
+    const double PI = 3.1415;
    if(op<0){
        int c =0;
        c=a;
@@ -21,7 +22,7 @@ int exec(int op, int a, int b) {
          break;
       case 5: result = abs(a);
          break;
-      case 6: result = power(a, b);
+      case 6: result = pow(a,b);
          break;
       case 7: result = a%b;
          break;
@@ -29,9 +30,19 @@ int exec(int op, int a, int b) {
          break;
       case 77: result = a%b;
          break;
-      case 8: result = max(a,b);
+      case 8: if(a>b){
+          result = a;
+          }
+         if(b>a){
+          result = b;
+         }    
          break;
-      case 9: result = min(a,b);
+      case 9: if(a<b){
+          result = a;
+         }
+         if(b<a){
+          result = b;
+         }
          break;
       case 10:
          switch(abs(b)%8){
@@ -55,9 +66,9 @@ int exec(int op, int a, int b) {
              break;
       case 11:
          if(a==0){
-             retern NAN;
+             return NAN;
          }
-         else {
+         else { 
              result = 6*cos(b*PI)/a;
          }
          break;
