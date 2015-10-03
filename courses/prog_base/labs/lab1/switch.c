@@ -24,10 +24,8 @@ int exec(int op, int a, int b) {
          break;
       case 6: result = pow(a,b);
          break;
-      case 7: result = a%b;
-         break;
-      case 13: result = a%b;
-         break;
+      case 7: 
+      case 13: 
       case 77: result = a%b;
          break;
       case 8: if(a>b){
