@@ -16,7 +16,6 @@ void rotateCCW270(int mat[4][4]){
             mat2[i][j]=mat[3-j][i];
         }
     }
-    return mat2;
 }
 
 void flipH(int mat[4][4]){
@@ -26,7 +25,6 @@ void flipH(int mat[4][4]){
             mat3[i][j]=mat[i][3-j];
         }
     }
-    return mat3;
 }
 
 void transposSide(int mat[4][4]){
@@ -36,5 +34,4 @@ void transposSide(int mat[4][4]){
             mat4[i][j]=mat[3-j][3-i];
         }
     }
-    return mat4;
 }
