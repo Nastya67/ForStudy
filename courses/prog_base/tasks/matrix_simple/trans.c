@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+int main() {
+    return 0;
+}
 void fillRand(int mat[4][4]){
     int i, j;
     for(i=0; i<4; i++){
