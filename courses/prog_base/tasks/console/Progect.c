@@ -1,3 +1,5 @@
+/*Я ще працюю над цим кодом..він трохи не так працює
+Але я це виправляю*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <windows.h>
@@ -11,7 +13,7 @@ int main(void)
     int blue = BACKGROUND_BLUE | BACKGROUND_INTENSITY | FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE;
     int green = BACKGROUND_GREEN | BACKGROUND_INTENSITY | FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE;
 
-    COORD pos;  /* ���������, �� ������ ������� ������� */
+    COORD pos;  /* ñòðóêòóðà, ùî ì³ñòèòü ïîçèö³þ êóðñîðà */
     pos.X = 0;
     pos.Y = 24;
     SetConsoleTextAttribute(hConsole, blue);
