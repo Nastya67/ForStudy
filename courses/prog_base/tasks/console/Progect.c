@@ -6,7 +6,7 @@
 
 int main(void)
 {
-    const long SLEEP_MILLISECONDS = 10;
+    const long SLEEP_MILLISECONDS = 1;
     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 
     int aqua = BACKGROUND_GREEN | BACKGROUND_BLUE | BACKGROUND_INTENSITY | FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE;
@@ -20,10 +20,9 @@ int main(void)
     SetConsoleCursorPosition(hConsole, pos);
     Sleep(SLEEP_MILLISECONDS);
     printf("*");
-
-    while(pos.Y < 25){
-        pos.X++;
-        if(pos.Y == 24 && pos.X == 24){
+    pos.X++;
+    while(pos.X != 79 && pos.Y != 0){
+        if(pos.Y == 24 && pos.X < 79){
             do{
                 if((pos.X + pos.Y)%3 == 0 && (pos.X + pos.Y) <= 52){
                     SetConsoleTextAttribute(hConsole, blue);
@@ -48,11 +47,6 @@ int main(void)
                 printf("*");
                 pos.X--;
                 pos.Y--;
-            }while(pos.X > 0);
-
-        }
-        if(pos.Y == 24 ){
-            do{
                 if((pos.X + pos.Y)%3 == 0 && (pos.X + pos.Y) <= 52){
                     SetConsoleTextAttribute(hConsole, blue);
                 }
@@ -74,10 +68,13 @@ int main(void)
                 SetConsoleCursorPosition(hConsole, pos);
                 Sleep(SLEEP_MILLISECONDS);
                 printf("*");
-                pos.X--;
+            }while(pos.X > 0 && pos.Y != 0);
+            if(pos.Y > 0){
                 pos.Y--;
-            }while(pos.X > -1);
-
+            }
+            else{
+                pos.X++;
+            }
         }
         if(pos.X == 0 && pos.Y >= 0){
             do{
@@ -104,11 +101,135 @@ int main(void)
                 printf("*");
                 pos.X++;
                 pos.Y++;
-            }while(pos.Y < 25);
-            pos.Y--;
-            pos.X--;
-        }}
-
+                if((pos.X + pos.Y)%3 == 0 && (pos.X + pos.Y) <= 52){
+                    SetConsoleTextAttribute(hConsole, blue);
+                }
+                if((pos.X + pos.Y)%3 == 1 && (pos.X + pos.Y) <= 52){
+                    SetConsoleTextAttribute(hConsole, aqua);
+                }
+                if((pos.X + pos.Y)%3 == 2 && (pos.X + pos.Y) <= 52){
+                    SetConsoleTextAttribute(hConsole, green);
+                }
+                if((pos.X + pos.Y)%3 == 1 && (pos.X + pos.Y) > 52){
+                    SetConsoleTextAttribute(hConsole, blue);
+                }
+                if((pos.X + pos.Y)%3 == 0 && (pos.X + pos.Y) > 52){
+                    SetConsoleTextAttribute(hConsole, aqua);
+                }
+                if((pos.X + pos.Y)%3 == 2 && (pos.X + pos.Y) > 52){
+                    SetConsoleTextAttribute(hConsole, green);
+                }
+                SetConsoleCursorPosition(hConsole, pos);
+                Sleep(SLEEP_MILLISECONDS);
+                printf("*");
+            }while(pos.Y < 24);
+            pos.X++;
+        }
+        if(pos.Y == 0 && pos.X <= 79){
+            do{
+                if((pos.X + pos.Y)%3 == 0 && (pos.X + pos.Y) <= 52){
+                    SetConsoleTextAttribute(hConsole, blue);
+                }
+                if((pos.X + pos.Y)%3 == 1 && (pos.X + pos.Y) <= 52){
+                    SetConsoleTextAttribute(hConsole, aqua);
+                }
+                if((pos.X + pos.Y)%3 == 2 && (pos.X + pos.Y) <= 52){
+                    SetConsoleTextAttribute(hConsole, green);
+                }
+                if((pos.X + pos.Y)%3 == 1 && (pos.X + pos.Y) > 52){
+                    SetConsoleTextAttribute(hConsole, blue);
+                }
+                if((pos.X + pos.Y)%3 == 0 && (pos.X + pos.Y) > 52){
+                    SetConsoleTextAttribute(hConsole, aqua);
+                }
+                if((pos.X + pos.Y)%3 == 2 && (pos.X + pos.Y) > 52){
+                    SetConsoleTextAttribute(hConsole, green);
+                }
+                SetConsoleCursorPosition(hConsole, pos);
+                Sleep(SLEEP_MILLISECONDS);
+                printf("*");
+                pos.X++;
+                pos.Y++;
+                if((pos.X + pos.Y)%3 == 0 && (pos.X + pos.Y) <= 52){
+                    SetConsoleTextAttribute(hConsole, blue);
+                }
+                if((pos.X + pos.Y)%3 == 1 && (pos.X + pos.Y) <= 52){
+                    SetConsoleTextAttribute(hConsole, aqua);
+                }
+                if((pos.X + pos.Y)%3 == 2 && (pos.X + pos.Y) <= 52){
+                    SetConsoleTextAttribute(hConsole, green);
+                }
+                if((pos.X + pos.Y)%3 == 1 && (pos.X + pos.Y) > 52){
+                    SetConsoleTextAttribute(hConsole, blue);
+                }
+                if((pos.X + pos.Y)%3 == 0 && (pos.X + pos.Y) > 52){
+                    SetConsoleTextAttribute(hConsole, aqua);
+                }
+                if((pos.X + pos.Y)%3 == 2 && (pos.X + pos.Y) > 52){
+                    SetConsoleTextAttribute(hConsole, green);
+                }
+                SetConsoleCursorPosition(hConsole, pos);
+                Sleep(SLEEP_MILLISECONDS);
+                printf("*");
+            }while(pos.Y < 24 && pos.X < 79);
+            if(pos.X == 79){
+                pos.Y--;
+            }
+            else{
+                pos.X++;
+            }
+        }
+        if(pos.X == 79){
+           do{
+                if((pos.X + pos.Y)%3 == 0 && (pos.X + pos.Y) <= 52){
+                    SetConsoleTextAttribute(hConsole, blue);
+                }
+                if((pos.X + pos.Y)%3 == 1 && (pos.X + pos.Y) <= 52){
+                    SetConsoleTextAttribute(hConsole, aqua);
+                }
+                if((pos.X + pos.Y)%3 == 2 && (pos.X + pos.Y) <= 52){
+                    SetConsoleTextAttribute(hConsole, green);
+                }
+                if((pos.X + pos.Y)%3 == 1 && (pos.X + pos.Y) > 52){
+                    SetConsoleTextAttribute(hConsole, blue);
+                }
+                if((pos.X + pos.Y)%3 == 0 && (pos.X + pos.Y) > 52){
+                    SetConsoleTextAttribute(hConsole, aqua);
+                }
+                if((pos.X + pos.Y)%3 == 2 && (pos.X + pos.Y) > 52){
+                    SetConsoleTextAttribute(hConsole, green);
+                }
+                SetConsoleCursorPosition(hConsole, pos);
+                Sleep(SLEEP_MILLISECONDS);
+                printf("*");
+                pos.X--;
+                pos.Y--;
+                if((pos.X + pos.Y)%3 == 0 && (pos.X + pos.Y) <= 52){
+                    SetConsoleTextAttribute(hConsole, blue);
+                }
+                if((pos.X + pos.Y)%3 == 1 && (pos.X + pos.Y) <= 52){
+                    SetConsoleTextAttribute(hConsole, aqua);
+                }
+                if((pos.X + pos.Y)%3 == 2 && (pos.X + pos.Y) <= 52){
+                    SetConsoleTextAttribute(hConsole, green);
+                }
+                if((pos.X + pos.Y)%3 == 1 && (pos.X + pos.Y) > 52){
+                    SetConsoleTextAttribute(hConsole, blue);
+                }
+                if((pos.X + pos.Y)%3 == 0 && (pos.X + pos.Y) > 52){
+                    SetConsoleTextAttribute(hConsole, aqua);
+                }
+                if((pos.X + pos.Y)%3 == 2 && (pos.X + pos.Y) > 52){
+                    SetConsoleTextAttribute(hConsole, green);
+                }
+                SetConsoleCursorPosition(hConsole, pos);
+                Sleep(SLEEP_MILLISECONDS);
+                printf("*");
+            }while(pos.Y > 0);
+            pos.X++;
+        }
+    }
     return EXIT_SUCCESS;
 }
+
 
