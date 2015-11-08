@@ -21,7 +21,7 @@ int main(void)
     Sleep(SLEEP_MILLISECONDS);
     printf("*");
     pos.X++;
-    while(pos.X != 79 && pos.Y != 0){
+    while(1){
         if(pos.Y == 24 && pos.X < 79){
             do{
                 if((pos.X + pos.Y)%3 == 0 && (pos.X + pos.Y) <= 52){
@@ -179,7 +179,7 @@ int main(void)
                 pos.X++;
             }
         }
-        if(pos.X == 79){
+        if(pos.X == 79 && pos.Y != 0){
            do{
                 if((pos.X + pos.Y)%3 == 0 && (pos.X + pos.Y) <= 52){
                     SetConsoleTextAttribute(hConsole, blue);
@@ -227,6 +227,13 @@ int main(void)
                 printf("*");
             }while(pos.Y > 0);
             pos.X++;
+        }
+        if(pos.X == 79 && pos.Y ==0){
+            SetConsoleTextAttribute(hConsole, blue);
+            SetConsoleCursorPosition(hConsole, pos);
+            Sleep(SLEEP_MILLISECONDS);
+            printf("*");
+            break;
         }
     }
     return EXIT_SUCCESS;
