@@ -18,8 +18,6 @@ int main(){
     int arr1[6]={1,2,3,4,5,6};
     int arr2[6]={-11,-12,-13,-14,-15,-16};
     int res[6];
-
-
     int i;
     fillRand3(arr, size);
     for (i = 0; i < size; i++)
@@ -27,20 +25,18 @@ int main(){
     printf("\nrez = %d\n",checkRand3(arr, size));
     printf("sred = %.3f\n",meanValue(arr, size));
     printf("min = %d\n", minValue(arr, size));
-
+    printf("index= %i\n", meanIndex(arr, size));
     printf("index = %d\n", minIndex(arr, size));
     printf("elem = %d\n", maxOccurance(arr, size));
     printf("res = %d\n", diff(arr1, arr2, res, size));
     sub(arr1, arr2, res, size);
     for (i=0;i<size;i++)
         printf("%d\t", res[i]);
-    printf("eq= %d\n", eq(arr1, arr2, size));
+    printf("\neq= %d\n", eq(arr1, arr2, size));
     land(arr1, arr2, res, size);
     for (i=0;i<size;i++)
         printf("%d\t", res[i]);
-    printf("index= %i\n", meanIndex(arr, size));
     return 0;
-
 }
 
 
@@ -89,17 +85,22 @@ int minValue(int arr[], int size){      //Знаходить мінімальний серед елементів 
 }
 
 int meanIndex(int arr[], int size){     //Знаходить індекс першого елементу, значення якого найближче до середнього значення серед елементів масиву
-    int i, ix;
-    float s, x;
-    s = meanValue(arr[size],size);
-    x = fabs(arr[size - 1]-s);
+    int i, a, sum = 0;
+    float ix;
+    for(i = 0; i < size; i++){
+        sum = sum + arr[i];
+    }
+    ix = sum/size;
+    float x;
+    x = fabs(arr[size - 1]-ix);
+    a = arr[size - 1];
     for(i = size - 1; i >= 0; i--){
-        if(x > fabs(arr[i] - s)){
-            x = fabs(arr[i] - s);
-            ix = i;
+        if(x > fabs(arr[i] - ix)){
+            x = fabs(arr[i] - ix);
+            a = i;
         }
     }
-    return ix;
+    return a;
 }
 
 int minIndex(int arr[], int size){      //Знаходить індекс першого мінімального елемента масиву
@@ -179,6 +180,6 @@ int eq(int arr1[], int arr2[], int size){
 void land(int arr1[], int arr2[], int res[], int size){
     int i;
     for(i = 0; i < size; i++){
-        res[i] = arr1[i] & arr2[i];
+        res[i] = arr1[i] && arr2[i];
     }
 }

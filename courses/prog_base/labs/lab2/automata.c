@@ -2,6 +2,22 @@
 #include "math.h"
 #include "stdlib.h"
 
+int main()
+{
+    int i;
+    int moveslen = 4;
+    int reslen = 4;
+    int moves[4] = {10, 105, 15, 6};
+    int res[4]={0};
+    run(moves, moveslen,res,reslen);
+    for(i=0; i<reslen; i++){
+        printf("%i ", res[i]);
+    }
+    printf("\n%i", run(moves, moveslen,res,reslen));
+}
+
+int run(int moves[], int movesLen, int res[], int resLen){
+
 enum operations { Pop, Push, Break, Repeat, Continue, nothing };
 
 struct Move
@@ -9,12 +25,9 @@ struct Move
 	enum operations left;//operation
 	int right;//state
 };
-int run(int moves[], int movesLen, int res[], int resLen, operations){
+
 	movesLen = 4;
 	resLen = movesLen;
-
-	int i;
-
 	int nowS = 0;
 	int Move;
 	int j = 0, i = 0;
