@@ -20,6 +20,7 @@ int main(){
     int res[6];
     int i;
     fillRand3(arr, size);
+
     for (i = 0; i < size; i++)
         printf("%d\t", arr[i]);
     printf("\nrez = %d\n",checkRand3(arr, size));
@@ -70,7 +71,7 @@ float meanValue(int arr[], int size) {      // знаходить середнє значення серед 
     for(i = 0; i < size; i++){
         x = x + arr[i];
     }
-    ix = x/size;
+    ix = (double)x/size;
     return ix;
 }
 
