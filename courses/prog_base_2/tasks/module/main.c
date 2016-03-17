@@ -7,5 +7,6 @@ int main(){
     printf("%.3f\n", arr_some(arr1, 1));
     arr_change(arr1, 1, 5.7);
     printf("%.3f\n", arr_some(arr1, 1));
+    arr_free(arr1);
     return 0;
 }
