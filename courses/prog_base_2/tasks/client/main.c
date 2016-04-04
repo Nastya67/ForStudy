@@ -63,7 +63,7 @@ int count(char str[]){
     count++;
     return count;
 }
-int main(int argc , char *argv[]){
+int main(){
     WSADATA wsa;
     SOCKET s;
     struct sockaddr_in server;
@@ -117,7 +117,8 @@ int main(int argc , char *argv[]){
     sprintf(result, "result=%i", num_word);
     char request[200];
 
-    sprintf(request, "POST %s%s HTTP/1.1\r\nContent-Length: %d\r\n\r\n%s", address, myVar, strlen(result), result);
+    sprintf(request, "POST %s%s HTTP/1.1\r\nContent-length: %d\r\n\r\n%s", address, myVar, strlen(result), result);
+
     printf("send: \n%s\n\n", request);
     send(s, request, strlen(request), 0);
 
@@ -134,11 +135,10 @@ int main(int argc , char *argv[]){
         return(1);
     }
 	server_reply[numrcv] = '\0';
-	printf("get: \n%s", server_repl);
+	printf("get: \n%s", server_reply);
 
     closesocket(s);
     WSACleanup();
-    printf("\n\n:(\n");
 
     return 0;
 }
