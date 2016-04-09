@@ -1,0 +1,35 @@
+# depslib dependency file v1.0
+1460206930 source:d:\Настя\Уроки\2семестр\ОП\labs\lab1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"term.h"
+	"tourniquet.h"
+
+1460199989 d:\Настя\Уроки\2семестр\ОП\labs\lab1\term.h
+
+1460204088 source:d:\Настя\Уроки\2семестр\ОП\labs\lab1\term.c
+	"term.h"
+	"tourniquet.h"
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+
+1460206930 source:d:\Настя\Уроки\2семестр\ОП\labs\lab1\tourniquet.c
+	<stdio.h>
+	<stdlib.h>
+	"tourniquet.h"
+
+1460030811 d:\Настя\Уроки\2семестр\ОП\labs\lab1\tourniquet.h
+
+1460200039 source:d:\Настя\Уроки\2семестр\ОП\labs\lab1\term_test.c
+	<stdlib.h>
+	<stdarg.h>
+	<stddef.h>
+	<setjmp.h>
+	<cmocka.h>
+	"term.h"
+	"tourniquet.h"
+	<stdio.h>
+
+1424096216 c:\program files\cmocka\include\cmocka.h
+
