@@ -1,0 +1,32 @@
+[
+	{
+		"name": "Luke",
+		"surname": "Skywalker", 
+		"years_old": 20,
+		"avarage_speed": 299792.458,
+		"got_a_driver's_license": {
+			"place": "Tatooine",
+			"time": "1111-11-11"
+		}
+	},
+	{
+		"name": "Yoda",
+		"surname": "Master", 
+		"years_old": 100500,
+		"avarage_speed": 300000.1,
+		"got_a_driver's_license": {
+			"place": "Empire",
+			"time": "1000-01-01"
+		}
+	},
+	{
+		"name": "Clark",
+		"surname": "Kent", 
+		"years_old": 21,
+		"avarage_speed": 340.29,
+		"got_a_driver's_license": {
+			"place": "Smallwille",
+			"time": "2001-09-11"
+		}
+	}
+]

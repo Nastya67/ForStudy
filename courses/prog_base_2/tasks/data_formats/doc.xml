@@ -1,0 +1,23 @@
+<taxi_drivers>
+	<taxi_driver>
+		<name>Luke</name>
+		<surname>Skywalker</surname>
+		<years_old>20</years_old>
+		<average_speed>299792.458</average_speed>
+		<got_a_drivers_license place='Tatooine'>1111-11-11</got_a_drivers_license>
+	</taxi_driver>
+	<taxi_driver>
+		<name>Yoda</name>
+		<surname>Master</surname>
+		<years_old>100500</years_old>
+		<average_speed>300000.1</average_speed>
+		<got_a_drivers_license place='Empire'>1000-01-01</got_a_drivers_license>
+	</taxi_driver>
+	<taxi_driver>
+		<name>Clark</name>
+		<surname>Kent</surname>
+		<years_old>21</years_old>
+		<average_speed>340.29</average_speed>
+		<got_a_drivers_license place='Smallville'>2001-09-11</got_a_drivers_license>
+	</taxi_driver>
+</taxi_drivers>
