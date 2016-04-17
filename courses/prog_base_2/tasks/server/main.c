@@ -209,7 +209,7 @@ int main(){
                             socket_write_string(clientSocket, "To long name place");
                             return 1;
                         }
-                        tax_repl_speed(taxistu, N, req.form[i].value);
+                        tax_repl_place(taxistu, N, req.form[i].value);
                     }
                     else if(strcmp(req.form[i].key, "got_a_drivers_license_date") == 0){
                         //struct tm hire_time;

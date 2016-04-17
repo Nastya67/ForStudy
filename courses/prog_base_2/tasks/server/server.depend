@@ -147,3 +147,19 @@
 	<libxml/parser.h>
 	<libxml/encoding.h>
 
+1460492742 source:c:\users\Настя\documents\forstudy\courses\prog_base_2\tasks\server\sicket_win.c
+	<winsock2.h>
+	"socket.h"
+
+1460492786 c:\users\Настя\documents\forstudy\courses\prog_base_2\tasks\server\socket.h
+
+1460912439 source:c:\users\Настя\documents\forstudy\courses\prog_base_2\tasks\server\taxist.c
+	"taxist.h"
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	<libxml/parser.h>
+	<libxml/tree.h>
+
+1460915715 c:\users\Настя\documents\forstudy\courses\prog_base_2\tasks\server\taxist.h
+
