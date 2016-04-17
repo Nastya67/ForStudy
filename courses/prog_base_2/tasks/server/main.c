@@ -241,6 +241,7 @@ int main(){
                 }
                 else{
                     tax_del(taxistu, N);
+                    socket_write_string(clientSocket, "Ok");
                 }
             }
             else
