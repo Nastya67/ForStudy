@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1462459443 source:d:\Настя\Уроки\2семестр\ОП\homework\database\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"taxi_db.h"
+	<sqlite3.h>
+
+1462457590 d:\Настя\Уроки\2семестр\ОП\homework\database\taxi_db.h
+	<sqlite3.h>
+
+1461540077 d:\Настя\Уроки\2семестр\ОП\homework\libsqlite3\sqlite3.h
+	<stdarg.h>
+
+1462459429 source:d:\Настя\Уроки\2семестр\ОП\homework\database\taxi_db.c
+	"taxi_db.h"
+	<sqlite3.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+
+1450771366 d:\Новая папка\sqlite3.h
+	<stdarg.h>
+
