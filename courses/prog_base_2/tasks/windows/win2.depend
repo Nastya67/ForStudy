@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1463337615 source:d:\Настя\Уроки\2семестр\ОП\homework\win2\main.c
+	<windows.h>
+	<CommCtrl.h>
+	<stdio.h>
+	<stdlib.h>
+
