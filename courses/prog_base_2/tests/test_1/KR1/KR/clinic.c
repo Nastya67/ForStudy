@@ -40,7 +40,7 @@ void room_free(room_t * self){
 }
 
 void clinic_addUserToRoom(clinic_t * self, int room, user_t * user){
-    list_push_back(self->room[room]->flat, user);
+    list_insert(self->room[room]->flat,1, user);
 }
 user_t * clinic_getUser(clinic_t * self, int room, int user){
     return list_get(self->room[room]->flat, user);
