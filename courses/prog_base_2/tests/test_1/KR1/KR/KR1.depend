@@ -1,0 +1,47 @@
+# depslib dependency file v1.0
+1463774747 source:d:\Настя\Уроки\2семестр\ОП\kr1\list.c
+	<stdlib.h>
+	<stdio.h>
+	"List.h"
+	<windows.h>
+	<string.h>
+
+1463774830 d:\Настя\Уроки\2семестр\ОП\kr1\list.h
+
+1463776378 source:d:\Настя\Уроки\2семестр\ОП\kr1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"List.h"
+
+1463781385 source:d:\Настя\Уроки\2семестр\ОП\kr1\kr\list.c
+	<stdlib.h>
+	<stdio.h>
+	"List.h"
+	<windows.h>
+	<string.h>
+
+1463780699 d:\Настя\Уроки\2семестр\ОП\kr1\kr\list.h
+
+1463821774 source:d:\Настя\Уроки\2семестр\ОП\kr1\kr\main.c
+	<stdio.h>
+	<stdlib.h>
+	"list/list.h"
+	"User.h"
+	"clinic.h"
+
+1463784804 d:\Настя\Уроки\2семестр\ОП\kr1\kr\list\list.h
+	<stdlib.h>
+
+1463820478 source:d:\Настя\Уроки\2семестр\ОП\kr1\kr\user.c
+	"User.h"
+	"clinic.h"
+
+1463817417 d:\Настя\Уроки\2семестр\ОП\kr1\kr\user.h
+
+1463821832 source:d:\Настя\Уроки\2семестр\ОП\kr1\kr\clinic.c
+	"clinic.h"
+	"User.h"
+
+1463819019 d:\Настя\Уроки\2семестр\ОП\kr1\kr\clinic.h
+	"list/list.h"
+
