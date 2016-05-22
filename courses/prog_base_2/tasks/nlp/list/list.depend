@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1463784896 source:d:\Настя\Уроки\2семестр\ОП\to test\list\main.c
+	<stdlib.h>
+	"list.h"
+
+1463784804 d:\Настя\Уроки\2семестр\ОП\to test\list\list.h
+	<stdlib.h>
+
+1463784896 source:d:\Настя\Уроки\2семестр\ОП\to test\nlp\list\main.c
+	<stdlib.h>
+	"list.h"
+
+1463784804 d:\Настя\Уроки\2семестр\ОП\to test\nlp\list\list.h
+	<stdlib.h>
+

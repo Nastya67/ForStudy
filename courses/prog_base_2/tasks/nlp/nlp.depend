@@ -1,0 +1,43 @@
+# depslib dependency file v1.0
+1463907630 source:d:\Настя\Уроки\2семестр\ОП\homework\nlp\sentence_word.c
+	"sentence_word.h"
+	"list.h"
+	<stdio.h>
+
+1463864952 d:\Настя\Уроки\2семестр\ОП\homework\nlp\sentence_word.h
+
+1463907857 source:d:\Настя\Уроки\2семестр\ОП\homework\nlp\main.c
+	<stdio.h>
+	<stdlib.h>
+	"sentence_word.h"
+	"list.h"
+	<ctype.h>
+
+1463907506 source:d:\Настя\Уроки\2семестр\ОП\homework\nlp\list.c
+	"list.h"
+	<string.h>
+
+1463863919 d:\Настя\Уроки\2семестр\ОП\homework\nlp\list.h
+
+1463918895 source:d:\Настя\Уроки\2семестр\ОП\to test\nlp\list.c
+	"list.h"
+	<string.h>
+
+1463909644 d:\Настя\Уроки\2семестр\ОП\to test\nlp\list.h
+
+1463922853 source:d:\Настя\Уроки\2семестр\ОП\to test\nlp\sentence_word.c
+	"sentence_word.h"
+	"list/list.h"
+	<stdio.h>
+
+1463912334 d:\Настя\Уроки\2семестр\ОП\to test\nlp\sentence_word.h
+
+1463922939 source:d:\Настя\Уроки\2семестр\ОП\to test\nlp\main.c
+	<stdio.h>
+	<stdlib.h>
+	"sentence_word.h"
+	<ctype.h>
+
+1463784804 d:\Настя\Уроки\2семестр\ОП\to test\nlp\list\list.h
+	<stdlib.h>
+
