@@ -1,0 +1,31 @@
+# depslib dependency file v1.0
+1463997899 source:d:\Настя\Уроки\2семестр\ОП\labs\lab3\main.c
+	<stdlib.h>
+	<stdarg.h>
+	<stddef.h>
+	<setjmp.h>
+	<cmocka.h>
+	<stdio.h>
+	<stdlib.h>
+	"queue.h"
+	<windows.h>
+
+1463998366 source:d:\Настя\Уроки\2семестр\ОП\labs\lab3\queue.c
+	<stdlib.h>
+	<stdio.h>
+	"queue.h"
+	<windows.h>
+	<string.h>
+	"list.h"
+
+1463963498 d:\Настя\Уроки\2семестр\ОП\labs\lab3\queue.h
+
+1463955727 source:d:\Настя\Уроки\2семестр\ОП\labs\lab3\list.c
+	<stdio.h>
+	<stdlib.h>
+	"list.h"
+
+1463955727 d:\Настя\Уроки\2семестр\ОП\labs\lab3\list.h
+
+1424096216 c:\program files\cmocka\include\cmocka.h
+
