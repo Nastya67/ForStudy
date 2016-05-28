@@ -78,34 +78,3 @@ SOCKADDR_IN get_Addr(char * ip)
     recvSockAddr.sin_addr.s_addr= inet_addr(ip); // specify ip address
     return recvSockAddr;
 }
-
-
-char * Max_word(char *message){
-    int i;
-    char max_word [300];
-    max_word [0] = 0;
-    char *wordd = &max_word;
-    char word [300];
-    word [0] = 0;
-    char *one_w = &word;
-    int j = 0;
-    for (i = 0; i < strlen (message); i++)
-        {
-            if (!isspace(message[i]))
-            {
-                one_w[j] = message[i];
-                j++;
-                one_w [j] = '\0';
-            } else {
-                if (strlen(one_w) >= strlen (wordd))
-                   {
-                       wordd [0] = '\0';
-                       strcat (wordd, one_w);
-                   }
-                    one_w [0] = '\0';
-                    j = 0;
-            }
-        }
-        wordd[strlen(wordd)] = '\0';
-    return wordd;
-}

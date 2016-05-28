@@ -45,6 +45,14 @@
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="server.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="server.h" />
+		<Unit filename="taxist.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="taxist.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />

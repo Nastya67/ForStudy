@@ -7,6 +7,7 @@
 #include "client.h"
 #include <libxml/parser.h>
 #include <libxml/tree.h>
+#include "server.h"
 
 #pragma comment(lib,"ws2_32.lib") //Winsock Library
 #define NO_FLAGS_SET 0
@@ -68,20 +69,16 @@ char * create_xml(){
 	xmlCleanupParser();*/
 }
 
-char * read_file(char * name, char * text){
+void read_file(char * name, char * text){
     FILE * file = fopen(name, "r");
     char line[50];
-    //char text[200] = "";
     while(fgets(line, 100, file)) {
         strcat(text, line);
     }
-    //printf("%s", text);
-    //return &text;
 }
 
 
-int main(int argc , char *argv[])
-{
+int main(int argc , char *argv[]){
     WSADATA Data;
     SOCKADDR_IN recvSockAddr;
     SOCKET recvSocket;
@@ -94,50 +91,32 @@ int main(int argc , char *argv[])
     char buffer[MAXBUFLEN];
     memset(buffer,0,MAXBUFLEN);
 
-    // Initialize Windows Socket DLL
-    //printf ("Initializing Socket");
     status = WSAStartup(MAKEWORD(2, 2), &Data);
     if(status != 0)    {
         printf("ERROR: WSAStartup unsuccessful\r\n");
         return 0;
     }
-   // printf ("Initialized");
-
 	// Get IP address from host name
 	remoteHost = gethostbyname(host_name);
 	ip = inet_ntoa(*(struct in_addr *)*remoteHost->h_addr_list);
+	//strcpy(ip, "216.58.214.209");
 	printf("IP address is: %s.\n", ip);
 	recvSockAddr = get_Addr (ip);
-
     //Creating new socket
     recvSocket = socket_new ();
-
     //Connecting
     con_to_serv (recvSocket, recvSockAddr);
-
+    //Sending request 1
     char * i_am = create_xml();
     send_request1(recvSocket, host_name, i_am);
-
     //Sending request 2
-    send_request2(recvSocket,host_name, buffer);
-
-    //Receiving the answer
-    rec_answer (recvSocket, buffer);
-    //printf("%s", buffer);
-    //Function
-    //strcpy(string, Max_word (buffer));
-
-    //Sending request 3
-    //send_request3(recvSocket,host_name, string);
-
+    //send_request2(recvSocket,host_name, buffer);
     //Receiving the answer
     //rec_answer (recvSocket, buffer);
-
-    //Looking for answer
-    //printf ("\n The result is: %s\n", buffer);
-
     //Closing socket
     closesocket(recvSocket);
+
+    server_proc();
 
     WSACleanup();
 
