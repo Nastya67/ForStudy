@@ -9,7 +9,7 @@
 	<libxml/parser.h>
 	<libxml/tree.h>
 
-1464433583 source:d:\Настя\Уроки\2семестр\ОП\kr2\main.c
+1464436147 source:d:\Настя\Уроки\2семестр\ОП\kr2\main.c
 	<stdlib.h>
 	<stdio.h>
 	<string.h>
@@ -19,6 +19,7 @@
 	"client.h"
 	<libxml/parser.h>
 	<libxml/tree.h>
+	"server.h"
 
 1464425486 d:\Настя\Уроки\2семестр\ОП\kr2\client.h
 
@@ -146,7 +147,7 @@
 	<libxml/parser.h>
 	<libxml/encoding.h>
 
-1464436023 source:d:\Настя\Уроки\2семестр\ОП\kr2\server.c
+1464439580 source:d:\Настя\Уроки\2семестр\ОП\kr2\server.c
 	"server.h"
 	<stdio.h>
 	<stdlib.h>
@@ -154,17 +155,20 @@
 	<string.h>
 	"taxist.h"
 	<winsock2.h>
-	"taxist.h"
 
 1464435888 d:\Настя\Уроки\2семестр\ОП\kr2\server.h
 
 1464434069 d:\Настя\Уроки\2семестр\ОП\kr2\taxist.h
 
-1464435817 source:d:\Настя\Уроки\2семестр\ОП\kr2\taxist.c
+1464439786 source:d:\Настя\Уроки\2семестр\ОП\kr2\taxist.c
 	"taxist.h"
 	<stdlib.h>
 	<stdio.h>
 	<string.h>
 	<libxml/parser.h>
 	<libxml/tree.h>
+	<sqlite3.h>
+
+1461540077 d:\Настя\Уроки\2семестр\ОП\libsqlite3\sqlite3.h
+	<stdarg.h>
 

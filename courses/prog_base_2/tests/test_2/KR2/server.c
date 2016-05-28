@@ -5,7 +5,6 @@
 #include <string.h>
 #include "taxist.h"
 #include <winsock2.h>
-#include "taxist.h"
 
 #pragma comment(lib,"ws2_32.lib")  // Winsock Library
 
@@ -20,7 +19,7 @@ socket_new_winsock(SOCKET winsocket) {
     return self;
 }
 
-socket_t * soc_new(void) {
+socket_t * sock_new(void) {
     SOCKET winsock = socket(AF_INET, SOCK_STREAM, 0);
     // == INVALID_SOCKET; WSAGetLastError()
     socket_t * self = socket_new_winsock(winsock);
@@ -188,20 +187,21 @@ const char * keyvalue_toString(keyvalue_t * self) {
 void server_proc(){
     lib_init();
 
-    char line[100];
+    /*char line[100];
     char text[1000] = "";
     FILE * fr = fopen("doc.xml", "r");
     while(fgets(line, 100, fr)) {
         strcat(text, line);
     }
-    fclose(fr);
+    fclose(fr);*/
     struct list * taxistu = list_new();
-    tax_parse(taxistu, &text);
+    //tax_parse(taxistu, &text);
 
     socket_t * sock = sock_new();
     socket_bind(sock, 5000);
     socket_listen(sock);
-    while(1){
+    int j = 0;
+    while(j < 3){
         puts("Waiting for connection..");
         socket_t * clientSocket = socket_accept(sock);
         puts("New clients");
@@ -232,7 +232,7 @@ void server_proc(){
                // printf("Empty\n");
             }
             else if(strcmp(req.uri, "/database") == 0){
-                int i;
+                /*int i;
                 char * toPrint = malloc(sizeof(char)*300);
                 char * buf = malloc(sizeof(char)*1000);
                 memset(buf, 0, 1000);
@@ -240,8 +240,8 @@ void server_proc(){
                     return_str_tax(taxistu, i, toPrint);
                     strcat(toPrint, "\n");
                     strcat(buf, toPrint);
-                }
-                socket_write_string(clientSocket, buf);
+                }*/
+                socket_write_string(clientSocket, tax_select());
                // printf("Em..\n%i\n", i);
             }
             else
@@ -251,6 +251,7 @@ void server_proc(){
 
         socket_close(clientSocket);
         socket_free(clientSocket);
+        j++;
     }
     socket_free(sock);
     lib_free();

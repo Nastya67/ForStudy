@@ -4,6 +4,7 @@
 #include <string.h>
 #include <libxml/parser.h>
 #include <libxml/tree.h>
+#include <sqlite3.h>
 
 
 struct taxist_s {
@@ -56,36 +57,45 @@ void tax_del(struct list * tax, int N){
     tax->size--;
 }
 
-void return_str_tax(struct list * tax, int N, char * buf){
+void return_str_tax(struct list * tax, char * buf){
     taxist_t * curr = tax->head;
-    int i;
-    for(i = 0; i < N; i++){
-        curr = curr->next;
-    }
+    //int i;
+   // for(i = 0; i < N; i++){
+        //curr = curr->next;
+   // }
     xmlDoc * doc = NULL;
 	xmlNode * rootNode = NULL;
+	xmlNode * curNode = NULL;
 	xmlNode * taxNode = NULL;
 	//xmlNode * groupNode = NULL;
 	char strBuf[1000];
 
 	doc = xmlNewDoc("1.0");
-	rootNode = xmlNewNode(NULL, "Taxist");
-	xmlDocSetRootElement(doc, rootNode);
 
-	xmlNewChild(rootNode, NULL, "name", curr->name);
-	xmlNewChild(rootNode, NULL, "surname", curr->surname);
-	char exp[10] = "";
-	sprintf(exp, "%i", curr->experience);
-	xmlNewChild(rootNode, NULL, "experience", exp);
-	char tar[20] = "";
-	sprintf(tar, "%.2f", curr->tariff);
-	xmlNewChild(rootNode, NULL, "tariff", tar);
-	xmlNewChild(rootNode, NULL, "got_license", curr->got_license);
+	rootNode = xmlNewNode(NULL, "Taxists");
+	xmlDocSetRootElement(doc, rootNode);
+	int i;
+	for(i = 0; i < list_size(tax); i++){
+        curNode = xmlNewChild(rootNode, NULL, "Taxist", NULL);
+
+        xmlNewChild(curNode, NULL, "name", curr->name);
+        xmlNewChild(curNode, NULL, "surname", curr->surname);
+        char exp[10] = "";
+        sprintf(exp, "%i", curr->experience);
+        xmlNewChild(curNode, NULL, "experience", exp);
+        char tar[20] = "";
+        sprintf(tar, "%.2f", curr->tariff);
+        xmlNewChild(curNode, NULL, "tariff", tar);
+        xmlNewChild(curNode, NULL, "got_license", curr->got_license);
+        if(curr->next != NULL)
+            curr = curr->next;
+	}
 
 
 	xmlBuffer * bufferPtr = xmlBufferCreate();
 	xmlNodeDump(bufferPtr, NULL, (xmlNode *)doc, 0, 1);
-	srtcpy(buf, (char*)bufferPtr->content);
+	strcpy(buf, (char*)bufferPtr->content);
+	printf("\n\n%s\n\n", buf);
 	xmlBufferFree(bufferPtr);
 
     xmlFreeDoc(doc);
@@ -110,5 +120,69 @@ void tax_init(taxist_t * tax, char * name, char * surname, int exp, double tar, 
     strcpy(tax->got_license, date);
 }
 
+char * tax_select(){
+    sqlite3 * db = NULL;
+    int rc = 0;
+    const char * dbFile = "Taxi.db";
 
+    rc = sqlite3_open(dbFile, &db); // open connection to DB
+    if (SQLITE_OK != rc){
+        printf("Can't open file `%s`\n", dbFile);
+        return 1;
+    }
+
+
+    //int rc = 0;
+    int count = 0;
+    sqlite3_stmt * stmt = NULL;
+    char * sql = "SELECT  * FROM Taxi;";
+    char * sql_count = "SELECT COUNT(*) FROM Taxi;";
+    rc = sqlite3_prepare_v2(db, sql_count, strlen(sql_count), &stmt, NULL);
+    do{
+        rc = sqlite3_step(stmt);
+        if(rc == SQLITE_ERROR)
+            break;
+        count = sqlite3_column_int(stmt, 0);
+        if(count == 0){
+            printf("not found\n");
+            return NULL;
+        }
+        sqlite3_finalize(stmt);
+    }while(0);
+    struct list * tax_list = list_new();
+
+    taxist_t * tax = malloc(sizeof(taxist_t)*count);
+    do{
+        rc = sqlite3_prepare_v2(db, sql, strlen(sql), &stmt, NULL);
+        if(rc == SQLITE_ERROR)
+            break;
+    }while(0);
+    int i;
+    for(i = 0; i < count; i++){
+        rc = sqlite3_step(stmt);
+        if(rc == SQLITE_ERROR)
+            break;
+        tax_fill(stmt, &tax[i]);
+        tax_add(tax_list, &tax[i]);
+    }
+    sqlite3_finalize(stmt);
+    char all[9000] = "";
+    return_str_tax(tax_list, all);
+    return &all;
+}
+void tax_fill(sqlite3_stmt * stmt, taxist_t * tax){
+    tax->id = sqlite3_column_int(stmt, 0);
+    const unsigned char * name = sqlite3_column_text(stmt, 1);
+    const unsigned char * surname = sqlite3_column_text(stmt, 2);
+    tax->experience = sqlite3_column_int(stmt, 3);
+    tax->tariff = sqlite3_column_double(stmt, 4);
+    const char * date = sqlite3_column_text(stmt, 5);
+    if(NULL != name)
+        strcpy(tax->name, (char *)name);
+    if(NULL != surname)
+        strcpy(tax->surname, (char *)surname);
+    memset(tax->got_license, 0, 40);
+    if(NULL != date)
+        strcpy(tax->got_license, date);
+}
 
