@@ -1,0 +1,20 @@
+# depslib dependency file v1.0
+1464424904 source:d:\Настя\Уроки\2семестр\ОП\kr2\client.c
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	<ctype.h>
+	<windows.h>
+	<winsock2.h>
+
+1464424921 source:d:\Настя\Уроки\2семестр\ОП\kr2\main.c
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	<ctype.h>
+	<windows.h>
+	<winsock2.h>
+	"client.h"
+
+1464422556 d:\Настя\Уроки\2семестр\ОП\kr2\client.h
+
