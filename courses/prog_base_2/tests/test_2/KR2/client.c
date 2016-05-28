@@ -4,17 +4,14 @@
 #include<ctype.h>
 #include<windows.h>
 #include<winsock2.h>
+#include <libxml/parser.h>
+#include <libxml/tree.h>
 
 #pragma comment(lib,"ws2_32.lib") //Winsock Library
 #define NO_FLAGS_SET 0
 #define PORT 80
 #define MAXBUFLEN 20480
 
-struct stud{
-    char student[20];
-    char group[8];
-    int variant;
-};
 
  SOCKET socket_new(void) {
      SOCKET recvSocket  = socket(AF_INET , SOCK_STREAM,  IPPROTO_TCP);
@@ -34,12 +31,9 @@ void con_to_serv (SOCKET recvSocket, SOCKADDR_IN recvSockAddr){
     }
 }
 
-void send_request1(SOCKET recvSocket, const char * host_name){
-    char request[200];
-    struct stud i_am;
-
-    sprintf(request, "GET /info HTTP/1.1\r\nHost:%s\r\n\r\n", host_name);  // add Host header with host_name value
-    send(recvSocket, request, strlen(request), 0);
+void send_request1(SOCKET recvSocket, const char * host_name, const char text[200]){
+    char request[200] = "";
+    send(recvSocket, text, strlen(text), 0);
 }
 
 void rec_answer (SOCKET recvSocket, char * buffer){
@@ -61,9 +55,8 @@ void rec_answer (SOCKET recvSocket, char * buffer){
 
 void send_request2(SOCKET recvSocket, const char * host_name, char * buffer){
     char request[200];
-    char word[50];
-    strcpy( word,strstr(buffer,"secret"));
-    sprintf(request, "GET /var/4?%s HTTP/1.1\r\nHost:%s\r\n\r\n",word, host_name);  // add Host header with host_name value
+    sprintf(request, "GET /test/var/8?format=xml HTTP/1.1\r\nHost:%s\r\n\r\n", host_name);  // add Host header with host_name value
+    printf("Request: %s\n", request);
     send(recvSocket, request, strlen(request), 0);
 }
 void send_request3(SOCKET recvSocket, const char* host_name, char * word){

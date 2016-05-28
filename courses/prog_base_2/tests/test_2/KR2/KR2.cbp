@@ -13,9 +13,13 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
+					<Add directory="C:/Program Files/lib/libxml2-2.7.8.win32/include" />
+					<Add directory="C:/Program Files/lib/iconv-1.9.2.win32/include" />
 				</Compiler>
 				<Linker>
 					<Add option="-lws2_32" />
+					<Add option="-llibxml2" />
+					<Add directory="C:/Program Files/lib/libxml2-2.7.8.win32/lib" />
 				</Linker>
 			</Target>
 			<Target title="Release">
