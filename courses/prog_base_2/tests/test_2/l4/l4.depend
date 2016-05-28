@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1464442539 source:d:\Настя\Уроки\2семестр\ОП\to test\l4\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<sys/stat.h>
+	<sys/types.h>
+	<dirent.h>
+	<windows.h>
+
