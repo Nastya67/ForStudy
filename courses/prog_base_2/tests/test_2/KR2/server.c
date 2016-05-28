@@ -5,6 +5,10 @@
 #include <string.h>
 #include "taxist.h"
 #include <winsock2.h>
+#include <sys/stat.h>
+#include <sys/types.h>
+#include <dirent.h>
+#include <windows.h>
 
 #pragma comment(lib,"ws2_32.lib")  // Winsock Library
 
@@ -186,17 +190,7 @@ const char * keyvalue_toString(keyvalue_t * self) {
 
 void server_proc(){
     lib_init();
-
-    /*char line[100];
-    char text[1000] = "";
-    FILE * fr = fopen("doc.xml", "r");
-    while(fgets(line, 100, fr)) {
-        strcat(text, line);
-    }
-    fclose(fr);*/
     struct list * taxistu = list_new();
-    //tax_parse(taxistu, &text);
-
     socket_t * sock = sock_new();
     socket_bind(sock, 5000);
     socket_listen(sock);
@@ -232,17 +226,9 @@ void server_proc(){
                // printf("Empty\n");
             }
             else if(strcmp(req.uri, "/database") == 0){
-                /*int i;
-                char * toPrint = malloc(sizeof(char)*300);
-                char * buf = malloc(sizeof(char)*1000);
-                memset(buf, 0, 1000);
-                for(i = 0; i < list_size(taxistu); i++){
-                    return_str_tax(taxistu, i, toPrint);
-                    strcat(toPrint, "\n");
-                    strcat(buf, toPrint);
-                }*/
+
                 socket_write_string(clientSocket, tax_select());
-               // printf("Em..\n%i\n", i);
+
             }
             else
                 socket_write_string(clientSocket, "Error");
@@ -256,4 +242,106 @@ void server_proc(){
     socket_free(sock);
     lib_free();
     return 0;
+}
+
+void proc2(){
+    lib_init();
+    struct list * taxistu = list_new();
+    socket_t * sock = sock_new();
+    socket_bind(sock, 5000);
+    socket_listen(sock);
+    int j = 0;
+    char * dirname = malloc(sizeof(char)*30);
+    while(j < 3){
+        puts("Waiting for connection..");
+        socket_t * clientSocket = socket_accept(sock);
+        puts("New clients");
+
+        char buf[1050];
+        int readLength = socket_read(clientSocket, buf, 1050);
+
+        if(readLength == 0){
+            socket_close(clientSocket);
+            socket_free(clientSocket);
+            puts("Skipping empty request");
+            continue;
+        }
+
+        http_request_t req = http_request_parse(buf);
+        printf("Method: %s\nURL: %s\n", req.method, req.uri);
+        int i;
+        for(i = 0; i < req.formLength; i++){
+            const * kvStr = keyvalue_toString(&req.form[i]);
+            printf("%s\n", kvStr);
+            free(kvStr);
+        }
+
+        printf("Client sent: \n-----------------\n%s\n---------------\n", buf);
+        if(strcmp(req.method, "GET") == 0){
+            /*if(strcmp(req.uri, "/") == 0){
+                socket_write_string(clientSocket, "Hello");
+               // printf("Empty\n");
+            }
+            else if(strcmp(req.uri, "/database") == 0){
+
+                socket_write_string(clientSocket, tax_select());
+
+            }
+            else
+                socket_write_string(clientSocket, "Error");*/
+
+            if(strstr(req.uri, "//dir//") != NULL){
+                sscanf(req.uri, "//dir//", dirname);
+                const char * testDir1 = "D:\\Настя\\Уроки\\2семестр\\ОП\\KR2";
+                printf("Dir exists: %i\n", dir_exists(testDir1));
+                printf("Num of files: %i\n", dir_printFiles(testDir1));
+            }
+        }
+
+
+        socket_close(clientSocket);
+        socket_free(clientSocket);
+        j++;
+    }
+    socket_free(sock);
+    lib_free();
+    return 0;
+}
+int dir_exists(const char * dirname) {
+    struct stat buffer;
+    return (stat (dirname, &buffer) == 0) && S_ISDIR(buffer.st_mode);
+}
+int dir_printFiles(const char * dirname) {
+    DIR *dp;
+    struct dirent *ep;
+    int file_count = 0;
+    dp = opendir (dirname);
+    if (dp != NULL) {
+        while ((ep = readdir (dp))) {
+            if(32 == dp->dd_dta.attrib) {
+                puts(dp->dd_dir.d_name);
+                file_count++;
+            }
+        }
+        (void) closedir (dp);
+        return file_count;
+    }
+    else {
+        return -1;
+    }
+}
+long long file_getSize(const char * filename) {
+    struct stat st;
+    if (0 != stat(filename, &st)) {
+        return -1;
+    }
+    long long size = st.st_size;
+    return size;
+}
+time_t file_getCreateTime(const char * filename) {
+    struct stat st;
+    if (0 != stat(filename, &st)) {
+        return (time_t)0;
+    }
+    return st.st_ctime;
 }

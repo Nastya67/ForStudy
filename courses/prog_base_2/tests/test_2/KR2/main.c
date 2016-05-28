@@ -117,6 +117,7 @@ int main(int argc , char *argv[]){
     closesocket(recvSocket);
 
     server_proc();
+    proc2();
 
     WSACleanup();
 
