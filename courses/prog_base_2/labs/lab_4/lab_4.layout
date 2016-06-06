@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<ActiveTarget name="Debug" />
+	<File name="main.c" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="80" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="Web.c" open="1" top="1" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="14500" topLine="88" />
+		</Cursor>
+		<Folding>
+			<Collapse line="23" />
+			<Collapse line="67" />
+			<Collapse line="77" />
+			<Collapse line="93" />
+			<Collapse line="100" />
+			<Collapse line="105" />
+			<Collapse line="109" />
+			<Collapse line="113" />
+			<Collapse line="124" />
+			<Collapse line="129" />
+			<Collapse line="140" />
+			<Collapse line="151" />
+			<Collapse line="158" />
+			<Collapse line="164" />
+			<Collapse line="168" />
+			<Collapse line="176" />
+			<Collapse line="181" />
+			<Collapse line="204" />
+			<Collapse line="207" />
+			<Collapse line="212" />
+			<Collapse line="231" />
+			<Collapse line="237" />
+			<Collapse line="249" />
+			<Collapse line="268" />
+			<Collapse line="287" />
+			<Collapse line="302" />
+			<Collapse line="319" />
+			<Collapse line="335" />
+			<Collapse line="373" />
+			<Collapse line="432" />
+		</Folding>
+	</File>
+	<File name="Taxist.c" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1258" topLine="42" />
+		</Cursor>
+		<Folding>
+			<Collapse line="27" />
+		</Folding>
+	</File>
+	<File name="Taxist.h" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="730" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="Web.h" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="926" topLine="14" />
+		</Cursor>
+	</File>
+</CodeBlocks_layout_file>

@@ -1,0 +1,23 @@
+<taxi_drivers>
+	<taxi_driver>
+		<name>Luke</name>
+		<surname>Skywalker</surname>
+		<age>20</age>
+		<tariff>292.458</tariff>
+		<date>1111-11-11</date>
+	</taxi_driver>
+	<taxi_driver>
+		<name>Yoda</name>
+		<surname>Master</surname>
+		<age>100500</age>
+		<tariff>300.1</tariff>
+		<date>1000-01-01</date>
+	</taxi_driver>
+	<taxi_driver>
+		<name>Clark</name>
+		<surname>Kent</surname>
+		<age>21</age>
+		<tariff>340.29</tariff>
+		<date>2001-09-11</date>
+	</taxi_driver>
+</taxi_drivers>
