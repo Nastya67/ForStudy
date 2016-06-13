@@ -1,6 +1,35 @@
 # depslib dependency file v1.0
-1465806220 source:d:\Настя\Уроки\2семестр\ОП\kr3\database.c
+1465810778 source:d:\Настя\Уроки\2семестр\ОП\kr3\database.c
+	"database.h"
+	<string.h>
+	<stdio.h>
+
+1465810731 d:\Настя\Уроки\2семестр\ОП\kr3\database.h
+	<sqlite3.h>
+
+1461540077 d:\Настя\Уроки\2семестр\ОП\kr3\libsqlite3\sqlite3.h
+	<stdarg.h>
+
+1465811278 source:d:\Настя\Уроки\2семестр\ОП\kr3\main.c
+	<stdio.h>
+	<stdlib.h>
+	<sqlite3.h>
 	"database.h"
 
-1465806220 d:\Настя\Уроки\2семестр\ОП\kr3\database.h
+1465811360 source:d:\Настя\Уроки\2семестр\ОП\kr3\kr3_3\database.c
+	"database.h"
+	<string.h>
+	<stdio.h>
+
+1465810731 d:\Настя\Уроки\2семестр\ОП\kr3\kr3_3\database.h
+	<sqlite3.h>
+
+1461540077 d:\Настя\Уроки\2семестр\ОП\kr3\kr3_3\libsqlite3\sqlite3.h
+	<stdarg.h>
+
+1465811278 source:d:\Настя\Уроки\2семестр\ОП\kr3\kr3_3\main.c
+	<stdio.h>
+	<stdlib.h>
+	<sqlite3.h>
+	"database.h"
 

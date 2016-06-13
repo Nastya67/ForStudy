@@ -30,13 +30,17 @@ static void func_text_4(void **state){
 static void func_doubleSpaseAndPoint_2(void **state){
     assert_int_equal (func("A  s."), 2);
 }
-
+static void func_NULL_0(void **state){
+    assert_int_equal (func(NULL), 0);
+}
 int isAlpha(char c){
     if((c <= 'Z' && c >= 'A') || (c <= 'z' && c >= 'a'))
        return 1;
     return 0;
 }
 int func(char str[]){
+    if(str == NULL)
+        return 0;
     int i = 0;
     int count = 0;
     for(i = 0; i < strlen(str); i++){
@@ -62,6 +66,7 @@ int main(){
         cmocka_unit_test(func_alphAndStr_3),
         cmocka_unit_test(func_text_4),
         cmocka_unit_test(func_doubleSpaseAndPoint_2),
+        cmocka_unit_test(func_NULL_0),
     };
     return cmocka_run_group_tests(tests, NULL, NULL);
 }
