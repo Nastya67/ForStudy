@@ -653,3 +653,91 @@
 	<cstdlib>
 	<SFML/Graphics.hpp>
 
+1465647490 source:c:\users\Настя\documents\forstudy\courses\prog_base_3\project\bomberman5\bomberman4\bomberman2\boomb.cpp
+	"Boomb.h"
+
+1465647472 c:\users\Настя\documents\forstudy\courses\prog_base_3\project\bomberman5\bomberman4\bomberman2\boomb.h
+	<SFML/Graphics.hpp>
+
+1465737558 source:c:\users\Настя\documents\forstudy\courses\prog_base_3\project\bomberman5\bomberman4\bomberman2\chose_person.cpp
+	"Chose_person.h"
+	"Game.h"
+	"Lavel.h"
+	"Player.h"
+	<windows.h>
+	<string>
+	<SFML/Audio.hpp>
+
+1465677573 c:\users\Настя\documents\forstudy\courses\prog_base_3\project\bomberman5\bomberman4\bomberman2\chose_person.h
+	<SFML/Graphics.hpp>
+	"Game.h"
+
+1465764878 c:\users\Настя\documents\forstudy\courses\prog_base_3\project\bomberman5\bomberman4\bomberman2\game.h
+	<SFML/Graphics.hpp>
+
+1465759333 c:\users\Настя\documents\forstudy\courses\prog_base_3\project\bomberman5\bomberman4\bomberman2\lavel.h
+	"Player.h"
+	"Enemy.h"
+
+1465689477 c:\users\Настя\documents\forstudy\courses\prog_base_3\project\bomberman5\bomberman4\bomberman2\player.h
+	<SFML/Graphics.hpp>
+
+1465756123 c:\users\Настя\documents\forstudy\courses\prog_base_3\project\bomberman5\bomberman4\bomberman2\enemy.h
+	<SFML/Graphics.hpp>
+
+1465765437 source:c:\users\Настя\documents\forstudy\courses\prog_base_3\project\bomberman5\bomberman4\bomberman2\game.cpp
+	"Game.h"
+	<SFML/Graphics.hpp>
+	<SFML/Audio.hpp>
+	<string.h>
+	<windows.h>
+	"Lavel.h"
+	"Menu.h"
+	"Lavel_map.h"
+	"Chose_person.h"
+	<sqlite3.h>
+
+1465735070 c:\users\Настя\documents\forstudy\courses\prog_base_3\project\bomberman5\bomberman4\bomberman2\menu.h
+	<SFML/Graphics.hpp>
+	<SFML/Audio.hpp>
+
+1465680872 c:\users\Настя\documents\forstudy\courses\prog_base_3\project\bomberman5\bomberman4\bomberman2\lavel_map.h
+	<SFML/Graphics.hpp>
+	"Game.h"
+
+1461540077 c:\users\Настя\documents\forstudy\courses\prog_base_3\project\bomberman5\bomberman4\libsqlite3\sqlite3.h
+	<stdarg.h>
+
+1465765258 source:c:\users\Настя\documents\forstudy\courses\prog_base_3\project\bomberman5\bomberman4\bomberman2\lavel.cpp
+	"Lavel.h"
+	<cstdlib>
+	<string.h>
+
+1465765516 source:c:\users\Настя\documents\forstudy\courses\prog_base_3\project\bomberman5\bomberman4\bomberman2\lavel_map.cpp
+	"Lavel_map.h"
+	<windows.h>
+
+1465742142 source:c:\users\Настя\documents\forstudy\courses\prog_base_3\project\bomberman5\bomberman4\bomberman2\main.cpp
+	<iostream>
+	<SFML/Graphics.hpp>
+	<SFML/Audio.hpp>
+	"Player.h"
+	"Lavel.h"
+	"Game.h"
+	<loadMap.h>
+
+1465720202 c:\users\Настя\documents\forstudy\courses\prog_base_3\project\bomberman5\bomberman4\loadmap\loadmap.h
+	<sqlite3.h>
+
+1465738862 source:c:\users\Настя\documents\forstudy\courses\prog_base_3\project\bomberman5\bomberman4\bomberman2\menu.cpp
+	"Menu.h"
+	"Game.h"
+	<windows.h>
+	<time.h>
+	<SFML/Audio.hpp>
+
+1465756867 source:c:\users\Настя\documents\forstudy\courses\prog_base_3\project\bomberman5\bomberman4\bomberman2\player.cpp
+	"Player.h"
+	<cstdlib>
+	<SFML/Graphics.hpp>
+

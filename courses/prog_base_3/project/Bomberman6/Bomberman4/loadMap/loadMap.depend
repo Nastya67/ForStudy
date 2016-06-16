@@ -1,0 +1,28 @@
+# depslib dependency file v1.0
+1465718617 source:d:\Настя\Уроки\2семестр\ОП\loadmap\main.c
+	"loadMap.h"
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+
+1465720202 d:\Настя\Уроки\2семестр\ОП\loadmap\loadmap.h
+	<sqlite3.h>
+
+1461540077 d:\Настя\Уроки\2семестр\ОП\loadmap\libsqlite3\sqlite3.h
+	<stdarg.h>
+
+1465721801 source:d:\Настя\Уроки\2семестр\Курсовая\bomberman4\loadmap\main.c
+	"loadMap.h"
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+
+1465720202 d:\Настя\Уроки\2семестр\Курсовая\bomberman4\loadmap\loadmap.h
+	<sqlite3.h>
+
+1461540077 d:\Настя\Уроки\2семестр\Курсовая\bomberman4\loadmap\libsqlite3\sqlite3.h
+	<stdarg.h>
+
+1461540077 d:\Настя\Уроки\2семестр\Курсовая\bomberman4\libsqlite3\sqlite3.h
+	<stdarg.h>
+
